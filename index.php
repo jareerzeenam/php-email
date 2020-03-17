@@ -9,7 +9,7 @@ $startTime = date('Y-m-d H:i:a',strtotime('+5 hour +30 minutes'));
 $today = $startTime;
 	
 	$url='https://www.google.com/recaptcha/api/siteverify';
-	$privatekey='6LefWpcUAAAAADz4gdvx9Curk2lJq7MN3A4i9cdo';
+	$privatekey='YOUR RECAPCHA SECRET KEY';
 	
 	$response= file_get_contents($url."?secret=".$privatekey."&response=".$_POST['g-recaptcha-response']."&remoteip=".$_SERVER['REMOTE_ADDR']);
 	$data = json_decode($response);
@@ -24,7 +24,7 @@ $today = $startTime;
 
     $body= "From: $name<br/>  E-Mail: $email <br/> Phone: $phone <br/> Message: $message <br/> Date: $today";
 		
-		$to='jareerzeenam.28@gmail.com';
+		$to='YOUR EMAIL';
 		
 		$subject ='Email Subject';
 		// To send HTML mail, the Content-type header must be set
@@ -77,7 +77,7 @@ $today = $startTime;
                         <label for="message">Your Message</label>
                         <textarea class="form-control" id="message" name="message" rows="3" placeholder="Hi Abc,"></textarea>
                     </div>
-                    <div class="g-recaptcha" data-sitekey="6LefWpcUAAAAADm-sNgajPL9rPVWaIyoFT2ckzoy"></div><br>
+                    <div class="g-recaptcha" data-sitekey="YOUR RECAPCHA SITE KEY"></div><br>
                     <button type="submit" class="btn btn-primary" name="submit">Submit</button>
                 </form>
             </div>
